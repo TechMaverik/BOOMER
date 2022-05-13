@@ -75,10 +75,21 @@ def Threat():
         pwm4.duty_u16(position)
         
         time.sleep(0.01)
-    for pos in range(4000,6000,50):
-        setServoCycle(pos)
-    for pos in range(6000,4000,-50):
-        setServoCycle(pos)
+    count=0
+    while count<=10:
+        count=count+1
+        for pos in range(4000,6000,50):
+            setServoCycle(pos)
+            time.sleep(0.1)
+        for pos in range(6000,4000,-50):
+            setServoCycle(pos)
+            time.sleep(0.1)
+        for pos in range(4000,6000,50):
+            setServoCycle(pos)
+            time.sleep(0.1)
+        for pos in range(6000,4000,-50):
+            setServoCycle(pos)
+            time.sleep(0.1)
    
 def forward():
     #G
@@ -168,3 +179,4 @@ def forward():
 
 
     
+
