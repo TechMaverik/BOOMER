@@ -77,8 +77,11 @@ if __name__ == "__main__":
             elif(action[r1]=="threat"):
                 openEyes()
                 movements.Threat()
+                movements.standup()
+                Buzzer.quiet()
             elif(action[r1]=="forward"):
                 movements.forward()
+                Buzzer.quiet()
             elif(action[r1]=="hi"):
                 Buzzer.playsong(song3)
                 print("Greetings")                
@@ -225,5 +228,6 @@ oled.show()
 Actuator.led.toggle()
 print(sleep_count)
 time.sleep(2)'''
+
 
 
