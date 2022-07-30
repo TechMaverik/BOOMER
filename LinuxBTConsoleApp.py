@@ -1,3 +1,4 @@
+'''Linux Bluetooth Console Application'''
 from HL_Engine import HLEngine_communications
 while True:
     print("[BOOMER ALLIGNMENT SETUP INITIALIZATION CONSOLE ]")
