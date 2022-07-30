@@ -1,6 +1,6 @@
 from machine import Pin, PWM
-import micropython.actuator_constants as actuator_constants
-import micropython.buzzer_music_controls as buzzer_music_controls, time
+import actuator_constants as actuator_constants
+import buzzer_music_controls as buzzer_music_controls, time
 
 
 def servo(degrees, name):
