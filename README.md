@@ -2,7 +2,7 @@
 ## A Robotic healthcare assistant for professionals.
 
 ### INSTALLATION
-* Install MATTBOT latest version.
+* <a href="https://github.com/HLRobotics/MATTBot_2021_Windows.git" target="_blank">Download</a> and Install MATTBOT latest version for Windows.
 * BOOMER uses Blutooth for communication (RS232 | Serial protocol)
 * Choose Boomer from the drop down under MATTWare titlebar.
 * Give the common port number (eg COM4)
