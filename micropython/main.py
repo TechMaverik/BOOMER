@@ -94,7 +94,7 @@ if __name__ == "__main__":
                 buzzer_music_controls.quiet()
             elif action[r1] == "threat":
                 open_eyes()
-                movements.Threat()
+                movements.action_wiggle()
                 movements.action_standup()
                 buzzer_music_controls.quiet()
             elif action[r1] == "forward":
@@ -144,7 +144,7 @@ if __name__ == "__main__":
                 movements.action_push_up()
                 buzzer_music_controls.quiet()
             if data == "t":
-                movements.Threat()
+                movements.action_wiggle()
             if data == "f":
                 buzzer_music_controls.playsong(song2)
                 movements.action_forward()
