@@ -95,6 +95,7 @@ if __name__ == "__main__":
             elif action[r1] == "threat":
                 open_eyes()
                 movements.action_wiggle()
+                time.sleep(1)
                 movements.action_standup()
                 buzzer_music_controls.quiet()
             elif action[r1] == "forward":
