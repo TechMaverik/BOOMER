@@ -1,7 +1,7 @@
 from machine import Pin, PWM
 import actuator_constants as actuator_constants
 import buzzer_music_controls as buzzer_music_controls, time
-
+import transformation_matrix
 
 def servo(degrees, name):
     """select servo and control it"""
@@ -44,18 +44,40 @@ def action_sitdown():
 
 def action_standup():
     """arranging legs in stand position"""
-    for i in actuator_constants.legServoName:
-        index_pos = actuator_constants.legServoName.index(i)
-        angle = actuator_constants.STAND_POS[index_pos]
-        max_duty_cycle = 9000
-        min_duty_cycle = 1000
-        new_duty_cycle = min_duty_cycle + (max_duty_cycle - min_duty_cycle) * (int(angle) / 180)
-        servo_pin = PWM(Pin(actuator_constants.legServo[index_pos]))
-        servo_pin.freq(50)
-        servo_pin.duty_u16(int(new_duty_cycle))
-        print("Boomer leg " + i + " initialized ...")
-        time.sleep(0.2)
-    buzzer_music_controls.quiet()
+    pwm = PWM(Pin(3))
+    pwm2 = PWM(Pin(6))
+    pwm3 = PWM(Pin(11))
+    pwm4 = PWM(Pin(14))
+    pwm.freq(50)
+
+    def set_servo_cycle(position):
+        pwm.duty_u16(position)
+        pwm2.duty_u16(position)
+    
+    def set_servo_cycle2(position):
+        pwm3.duty_u16(position)
+        pwm4.duty_u16(position)
+
+        time.sleep(0.01)
+
+
+    for pos in range(4000, 6000, 50):
+        set_servo_cycle(pos)
+        time.sleep(0.1)
+    for pos in range(6000, 4000, -50):
+        set_servo_cycle2(pos)
+        time.sleep(0.1)
+        
+    time.sleep(5)
+    
+    for pos in range(4000, 6000, 50):
+        set_servo_cycle2(pos)
+        time.sleep(0.1)
+    for pos in range(6000, 4000, -50):
+        set_servo_cycle(pos)
+        time.sleep(0.1)
+ 
+    
 
 
 def action_push_up():
@@ -193,3 +215,4 @@ def action_forward():
 
     for pos in range(4500, 6000, 50):
         set_servo_cycle_3(pos)
+
