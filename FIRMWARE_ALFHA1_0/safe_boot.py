@@ -75,7 +75,9 @@ def close_eyes():
 
 
 if __name__ == "__main__":
-    #movements.action_sitdown()
-    #time.sleep(2)
-    movements.action_standup()   
+    movements.action_sitdown()
+    time.sleep(1)
+    movements.action_standup()
+ 
+    
 

@@ -53,6 +53,7 @@ def action_standup():
     def set_servo_cycle(position):
         pwm.duty_u16(position)
         pwm2.duty_u16(position)
+        time.sleep(0.01)
     
     def set_servo_cycle2(position):
         pwm3.duty_u16(position)
@@ -61,19 +62,19 @@ def action_standup():
         time.sleep(0.01)
 
 
-    for pos in range(4000, 6000, 50):
+    for pos in range(5000, 8000, 50):
         set_servo_cycle(pos)
         time.sleep(0.1)
-    for pos in range(6000, 4000, -50):
+    for pos in range(5000, 2000, -50):
         set_servo_cycle2(pos)
         time.sleep(0.1)
         
     time.sleep(5)
     
-    for pos in range(4000, 6000, 50):
+    for pos in range(2000, 5000, 50):
         set_servo_cycle2(pos)
         time.sleep(0.1)
-    for pos in range(6000, 4000, -50):
+    for pos in range(8000, 5000, -50):
         set_servo_cycle(pos)
         time.sleep(0.1)
  
@@ -123,24 +124,24 @@ def action_wiggle():
     def set_servo_cycle(position):
         pwm.duty_u16(position)
         pwm2.duty_u16(position)
-        pwm3.duty_u16(position)
-        pwm4.duty_u16(position)
+        #pwm3.duty_u16(position)
+        #pwm4.duty_u16(position)
 
         time.sleep(0.01)
 
     count = 0
     while count <= 10:
         count = count + 1
-        for pos in range(4000, 6000, 50):
+        for pos in range(1000, 2000, 50):
             set_servo_cycle(pos)
             time.sleep(0.1)
-        for pos in range(6000, 4000, -50):
+        for pos in range(2000, 1000, -50):
             set_servo_cycle(pos)
             time.sleep(0.1)
-        for pos in range(4000, 6000, 50):
+        for pos in range(5000, 6000, 50):
             set_servo_cycle(pos)
             time.sleep(0.1)
-        for pos in range(6000, 4000, -50):
+        for pos in range(6000, 5000, -50):
             set_servo_cycle(pos)
             time.sleep(0.1)
 
