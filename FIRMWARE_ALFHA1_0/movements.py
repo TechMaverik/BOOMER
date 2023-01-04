@@ -1,219 +1,64 @@
+"""movements.py"""
 from machine import Pin, PWM
-import actuator_constants as actuator_constants
-import buzzer_music_controls as buzzer_music_controls, time
-import transformation_matrix
+import time
+from actuator_constants import *
 
-def servo(degrees, name):
-    """select servo and control it"""
-    try:
-        if int(degrees) > 180:
-            degrees = 180
-        if int(degrees) < 0:
-            degrees = 0
-        max_duty_cycle = 9000
-        min_duty_cycle = 1000
-        new_duty_cycle = min_duty_cycle + (max_duty_cycle - min_duty_cycle) * (int(degrees) / 180)
+class MovementMechanism:
+    """Movement mechanism"""
 
-        if name in actuator_constants.legServoName:
-            index_pos = actuator_constants.legServoName.index(name)
-            actuator_constants.legAngle[index_pos] = degrees
-        print(actuator_constants.legAngle)
-        print("Servo Leg is:", actuator_constants.legServo[index_pos])
-        print("Duty Cycle is:", new_duty_cycle)
-        servo_pin = PWM(Pin(actuator_constants.legServo[index_pos]))
-        servo_pin.freq(50)
-        servo_pin.duty_u16(int(new_duty_cycle))
-    except:
-        print("[INVALID MESSAGE FORMAT]")
+    def servodrive_system(self,pin_array,range_array,interval,mode):
+        """Servodrive_system"""
+        pwm1 = PWM(Pin(pin_array[0]))
+        pwm2 = PWM(Pin(pin_array[1]))
+        pwm3 = PWM(Pin(pin_array[2]))
+        pwm4 = PWM(Pin(pin_array[3]))        
 
-
-def action_sitdown():
-    """arranging legs in sit position"""
-    for i in actuator_constants.legServoName:
-        index_pos = actuator_constants.legServoName.index(i)
-        angle = actuator_constants.SIT_POS[index_pos]
-        max_duty_cycle = 9000
-        min_duty_cycle = 1000
-        new_duty_cycle = min_duty_cycle + (max_duty_cycle - min_duty_cycle) * (int(angle) / 180)
-        servo_pin = PWM(Pin(actuator_constants.legServo[index_pos]))
-        servo_pin.freq(50)
-        servo_pin.duty_u16(int(new_duty_cycle))
-        print("Boomer leg " + i + " initialized ...")
-        time.sleep(0.2)
-    buzzer_music_controls.quiet()
-
-def action_standup():
-    """arranging legs in stand position"""
-    pwm = PWM(Pin(3))
-    pwm2 = PWM(Pin(6))
-    pwm3 = PWM(Pin(11))
-    pwm4 = PWM(Pin(14))
-    pwm.freq(50)
-
-    def set_servo_cycle(position):
-        pwm.duty_u16(position)
-        pwm2.duty_u16(position)
-        time.sleep(0.01)
-    
-    def set_servo_cycle2(position):
-        pwm3.duty_u16(position)
-        pwm4.duty_u16(position)
-
-        time.sleep(0.01)
-
-
-    for pos in range(5000, 8000, 50):
-        set_servo_cycle(pos)
-        time.sleep(0.1)
-    for pos in range(5000, 2000, -50):
-        set_servo_cycle2(pos)
-        time.sleep(0.1)
+        def set_servo_cycle(position):
+            pwm1.duty_u16(position)
+            pwm2.duty_u16(position)
+            time.sleep(0.01)
         
-    time.sleep(5)
-    
-    for pos in range(2000, 5000, 50):
-        set_servo_cycle2(pos)
-        time.sleep(0.1)
-    for pos in range(8000, 5000, -50):
-        set_servo_cycle(pos)
-        time.sleep(0.1)
- 
-    
+        def set_servo_cycle2(position):
+            pwm3.duty_u16(position)
+            pwm4.duty_u16(position)
+            time.sleep(0.01)
 
+        def set_servo_cycle3(position):
+            pwm1.duty_u16(position)
+            pwm2.duty_u16(position)
+            pwm3.duty_u16(position)
+            pwm4.duty_u16(position)
+            
+        if mode==True:
+            for pos in range(range_array[0], range_array[1], interval):
+                set_servo_cycle(pos)
+                time.sleep(0.1)
+            for pos in range(range_array[2], range_array[3], -interval):
+                set_servo_cycle2(pos)
+                time.sleep(0.1)
+        elif mode==False:
+            for pos in range(range_array[0], range_array[1], interval):
+                set_servo_cycle3(pos)
+                time.sleep(0.1)
 
-def action_push_up():
-    """function for making the robot to do push up"""
-    pwm = PWM(Pin(4))
-    pwm2 = PWM(Pin(12))
-    pwm.freq(50)
+    def action_sitdown(self):
+        """Arranging legs to sit position"""
+        for i in LEG_SERVO_NAME:
+            index_pos = LEG_SERVO_NAME.index(i)
+            angle = SIT_POS[index_pos]
+            max_duty_cycle = 9000
+            min_duty_cycle = 1000
+            new_duty_cycle = min_duty_cycle + (max_duty_cycle - min_duty_cycle) * (int(angle) / 180)
+            servo_pin = PWM(Pin(LEG_SERVO_PIN[index_pos]))
+            servo_pin.freq(50)
+            servo_pin.duty_u16(int(new_duty_cycle))
+            print("Boomer leg " + i + " initialized ...")
+            time.sleep(0.2)     
 
-    def set_servo_cycle(position):
-        pwm.duty_u16(position)
-        pwm2.duty_u16(position)
-        time.sleep(0.01)
-
-    for pos in range(3000, 9000, 50):
-        set_servo_cycle(pos)
-    for pos in range(9000, 3000, -50):
-        set_servo_cycle(pos)
-
-
-def sleep():
-    """function to set sleep count"""
-    pwm = PWM(Pin(4))
-    pwm2 = PWM(Pin(12))
-    pwm.freq(50)
-
-    def set_servo_cycle(position):
-        pwm.duty_u16(position)
-        pwm2.duty_u16(position)
-        time.sleep(0.01)
-
-    for pos in range(3000, 9000, 50):
-        set_servo_cycle(pos)
-
-
-def action_wiggle():
-    """function to set up wiggling motion"""
-    pwm = PWM(Pin(2))
-    pwm2 = PWM(Pin(10))
-    pwm3 = PWM(Pin(5))
-    pwm4 = PWM(Pin(13))
-    pwm.freq(50)
-
-    def set_servo_cycle(position):
-        pwm.duty_u16(position)
-        pwm2.duty_u16(position)
-        #pwm3.duty_u16(position)
-        #pwm4.duty_u16(position)
-
-        time.sleep(0.01)
-
-    count = 0
-    while count <= 10:
-        count = count + 1
-        for pos in range(1000, 2000, 50):
-            set_servo_cycle(pos)
-            time.sleep(0.1)
-        for pos in range(2000, 1000, -50):
-            set_servo_cycle(pos)
-            time.sleep(0.1)
-        for pos in range(5000, 6000, 50):
-            set_servo_cycle(pos)
-            time.sleep(0.1)
-        for pos in range(6000, 5000, -50):
-            set_servo_cycle(pos)
-            time.sleep(0.1)
-
-
-def action_forward():
-    """function to set up action formward movement"""
-    # G
-    pwm = PWM(Pin(10))
-    pwm2 = PWM(Pin(12))
-    pwm.freq(50)
-    pwm2.freq(50)
-
-    def set_servo_cycle(position):
-        pwm.duty_u16(position)
-        time.sleep(0.02)
-
-    def set_servo_cycle2(position):
-        pwm2.duty_u16(position)
-        time.sleep(0.02)
-
-    for pos in range(3500, 6000, 50):
-        set_servo_cycle2(pos)
-    for pos in range(6000, 4000, -50):
-        set_servo_cycle(pos)
-    for pos in range(6000, 3000, -50):
-        set_servo_cycle2(pos)
-
-    # D
-    pwm = PWM(Pin(5))
-
-    pwm.freq(50)
-    for pos in range(5000, 3500, -50):
-        set_servo_cycle(pos)
-
-    # A
-    pwm = PWM(Pin(2))
-    pwm2 = PWM(Pin(4))
-    pwm2.freq(50)
-    pwm.freq(50)
-
-    for pos in range(3500, 5000, 50):
-        set_servo_cycle2(pos)
-    for pos in range(5000, 3000, -50):
-        set_servo_cycle(pos)
-    for pos in range(5000, 3500, -50):
-        set_servo_cycle2(pos)
-
-    # J
-    pwm = PWM(Pin(13))
-
-    pwm.freq(50)
-
-    for pos in range(5000, 4500, -50):
-        set_servo_cycle(pos)
-    for pos in range(4500, 5000, 50):
-        set_servo_cycle(pos)
-
-    pwm = PWM(Pin(10))
-    pwm2 = PWM(Pin(5))
-    pwm3 = PWM(Pin(2))
-    pwm4 = PWM(Pin(13))
-
-    pwm.freq(50)
-
-    def set_servo_cycle_3(position):
-        pwm.duty_u16(position)
-        pwm2.duty_u16(position - 500)
-        pwm3.duty_u16(position - 1000)
-        pwm4.duty_u16(position)
-
-        time.sleep(0.09)
-
-    for pos in range(4500, 6000, 50):
-        set_servo_cycle_3(pos)
-
+    def action_transformation_sitdown_standup(self):
+        """Action transformation sitdown to standup"""
+        self.servodrive_system(SIT_STAND_TRANSFORMATION_PIN_ARRAY,SIT_STAND_TRANSFORMATION_PWM_ARRAY,INTERVAL,True)
+    def action_transformation_standup_to_sitdown(self):
+        """Action transformation standup to sitdown"""
+        self.servodrive_system(SIT_STAND_TRANSFORMATION_PIN_ARRAY,STAND_SIT_TRANSFORMATION_PWM_ARRAY,-INTERVAL,True)
+        
