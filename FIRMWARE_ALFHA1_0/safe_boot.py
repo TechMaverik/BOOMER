@@ -6,15 +6,18 @@ from song_bank import *
 import actuator_constants as actuator_constants
 import movements
 import time
+
 # import dht11
 uart = UART(0, 9600)
 
+
 class Safe_Boot:
     """Safe Boot"""
-    def __init__(self):
-        self.movement_mechanism=movements.MovementMechanism()
 
-    def display_message(self,msg):
+    def __init__(self):
+        self.movement_mechanism = movements.MovementMechanism()
+
+    def display_message(self, msg):
         """Display message functionality"""
         print(msg)
 
@@ -29,8 +32,3 @@ class Safe_Boot:
 
 
 Safe_Boot().init_boot()
-
-
- 
-    
-
