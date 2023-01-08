@@ -24,23 +24,52 @@ class MovementMechanism:
             pwm4.duty_u16(position)
             time.sleep(0.01)
 
-        def set_servo_cycle3(position):
-            pwm1.duty_u16(position)
-            pwm2.duty_u16(position)
-            pwm3.duty_u16(position)
-            pwm4.duty_u16(position)
+        def set_servo_cycle3(position): 
+            delta=5000-position        
+            print(position,delta)       
+            pwm1.duty_u16(position)            
+            pwm2.duty_u16(position)           
+            pwm3.duty_u16(5000+delta)
+            pwm4.duty_u16(5000+delta)        
+
+        def set_servo_cycle4(position): 
+            delta=5000-position               
+            pwm1.duty_u16(position)  
+            pwm3.duty_u16(5000+delta)
+
+        def set_servo_cycle5(position): 
+            delta=5000-position               
+            pwm2.duty_u16(position)  
+            pwm4.duty_u16(5000+delta)
+           
 
         if mode == True:
-            for pos in range(range_array[0], range_array[1], interval):
+            for pos in range(range_array[0], range_array[1], -interval):
                 set_servo_cycle(pos)
                 time.sleep(0.1)
-            for pos in range(range_array[2], range_array[3], -interval):
+            for pos in range(range_array[2], range_array[3], interval):
                 set_servo_cycle2(pos)
                 time.sleep(0.1)
-        elif mode == False:
-            for pos in range(range_array[0], range_array[1], interval):
+        elif mode == False:           
+            for pos in range(range_array[0], range_array[1], -interval):
+                print(pos)
                 set_servo_cycle3(pos)
                 time.sleep(0.1)
+        elif mode == "F1":
+            for pos in range(range_array[0], range_array[1], interval):
+                set_servo_cycle4(pos)
+                time.sleep(0.1)
+            for pos in range(range_array[2], range_array[3], -interval):
+                set_servo_cycle5(pos)
+                time.sleep(0.1)
+        elif mode == "F2":
+            for pos in range(range_array[2], range_array[3], -interval):
+                set_servo_cycle5(pos)
+                time.sleep(0.1)
+            for pos in range(range_array[0], range_array[1], interval):
+                set_servo_cycle4(pos)
+                time.sleep(0.1)
+
 
     def action_sitdown(self):
         """Arranging legs to sit position"""
@@ -58,20 +87,58 @@ class MovementMechanism:
             print("Boomer leg " + i + " initialized ...")
             time.sleep(0.2)
 
+    def action_transformation_standup_forward(self):
+        """Action transformation stand to forward"""
+        print("Action transformation stand to forward")
+        self.servodrive_system(
+            STAND_FORWARD_TRANSFORMATION_PIN_ARRAY,
+            STAND_FORWARD_TRANSFORMATION_PWM_ARRAY,
+            INTERVAL,
+            "F1",
+        )
+
+    def action_transformation_forward_standup(self):
+        """Action transformation stand to forward"""
+        print("Action transformation stand to forward")
+        self.servodrive_system(
+            STAND_FORWARD_TRANSFORMATION_PIN_ARRAY,
+            FORWARD_STAND_TRANSFORMATION_PWM_ARRAY,
+            -INTERVAL,
+            "F2",
+        )
+
+    def action_transformation_standup_forward_all(self):
+        """Action transformation stand to forward"""
+        print("Action transformation stand to forward all")
+        self.servodrive_system(
+            STAND_FORWARD_TRANSFORMATION_PIN_ARRAY,
+            FORWARD_STAND_TRANSFORMATION_PWM_ARRAY,
+            -INTERVAL,
+            False,
+        )
+
+
     def action_transformation_sitdown_standup(self):
         """Action transformation sitdown to standup"""
+        print("Action transformation sitdown to standup")
         self.servodrive_system(
             SIT_STAND_TRANSFORMATION_PIN_ARRAY,
             SIT_STAND_TRANSFORMATION_PWM_ARRAY,
             INTERVAL,
-            True,
+            False,
         )
 
     def action_transformation_standup_to_sitdown(self):
         """Action transformation standup to sitdown"""
+        print("Action transformation standup to sitdown")
         self.servodrive_system(
             SIT_STAND_TRANSFORMATION_PIN_ARRAY,
             STAND_SIT_TRANSFORMATION_PWM_ARRAY,
             -INTERVAL,
-            True,
+            False,
         )
+
+ 
+
+
+
