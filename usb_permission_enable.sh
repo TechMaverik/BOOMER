@@ -1,0 +1,3 @@
+echo "BOOMER USB PERMISSION TOOL"
+sudo chmod 666 /dev/ttyACM0
+echo "PERMISSION GRANTED"

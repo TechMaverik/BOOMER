@@ -1,2 +1,8 @@
 """message_constants.py"""
 BOOT = "[ BOOMER FIRMWARE_ALFHA1_0 ]"
+SIT_DEFAULT = "Action sit default hard"
+STAND_DEFAULT = "Action stand default hard"
+ACT_TXN_SIT_STAND = "Action transformation sitdown to standup"
+ACT_TXN_STAND_SIT = "Action transformation standup to sitdown"
+ACT_TXN_STAND_FWD = "Action transformation stand to forward and bact to stand position"
+ACT_TXN_ARMS = "Action transformation all arms up and down"

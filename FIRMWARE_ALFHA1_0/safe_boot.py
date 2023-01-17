@@ -23,16 +23,11 @@ class Safe_Boot:
 
     def init_boot(self):
         """initialize boot"""
-        # self.display_message(BOOT)
-        self.movement_mechanism.action_sitdown()
-        time.sleep(1)
+        self.display_message(BOOT)
+        self.movement_mechanism.action_sitdown_hard()
         self.movement_mechanism.action_transformation_sitdown_standup()
-        self.movement_mechanism.action_transformation_standup_move_forward_step()
-        # time.sleep(1)
-        # self.movement_mechanism.action_transformation_standup_forward()
-        # time.sleep(1)
-        # self.movement_mechanism.action_transformation_forward_standup()
-        # self.movement_mechanism.action_transformation_standup_to_sitdown()
+        self.movement_mechanism.action_transformation_stand_forward_stand()
+        self.movement_mechanism.action_transformation_standup_to_sitdown()
 
 
 Safe_Boot().init_boot()
