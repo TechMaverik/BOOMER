@@ -1,0 +1,47 @@
+"""actuator_constants.py"""
+from machine import Pin
+
+LEG_SERVO_NAME = [
+    "A_SHOULDER",
+    "B_MUSCLE",
+    "C_HAND",
+    "D_SHOULDER",
+    "E_MUSCLE",
+    "F_HAND",
+    "G_SHOULDER",
+    "H_MUSCLE",
+    "I_HAND",
+    "J_SHOULDER",
+    "K_MUSCLE",
+    "L_HAND",
+]
+LEG_SERVO_PIN = [2, 3, 4, 5, 6, 7, 10, 11, 12, 13, 14, 15]
+SIT_POS = [
+    "120",
+    "090",
+    "090",
+    "070",
+    "090",
+    "090",
+    "070",
+    "090",
+    "090",
+    "120",
+    "090",
+    "090",
+]
+MAXIMUM_DUTY_CYCLE = 9000
+MINIMUM_DUTY_CYCLE = 1000
+SIT_STAND_TRANSFORMATION_PIN_ARRAY = [3, 11, 6, 14]
+SIT_STAND_TRANSFORMATION_PWM_ARRAY = [5000, 2000, 5000, 8000]
+STAND_SIT_TRANSFORMATION_PWM_ARRAY = [2000, 5000, 8000, 5000]
+ALL_ARMS_TRANSFORMATION_ARRAY = [30, 90, 150]
+FORWARD_TRANSFORMATION_ARRAY = [60, 70, 80, 110, 120, 130]
+STAND_DEFAULT_HARD = []
+FRONTAL_ALEG = [2, 3, 4]
+FRONTAL_BLEG = [5, 6, 7]
+HIND_CLEG = [10, 11, 12]
+HIND_DLEG = [13, 14, 15]
+INTERVAL = 50
+led = Pin(25, Pin.OUT)
+led.high()
