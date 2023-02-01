@@ -5,5 +5,5 @@
         "--line-length",
         "200"
     ],
-    "python.formatting.provider": "black"
+    "python.formatting.provider": "black",
 }
