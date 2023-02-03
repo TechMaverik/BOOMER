@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>448</width>
-    <height>388</height>
+    <height>410</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,8 +22,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>451</width>
-     <height>391</height>
+     <width>441</width>
+     <height>401</height>
     </rect>
    </property>
    <property name="font">
@@ -38,7 +38,7 @@
     <enum>QTabWidget::Triangular</enum>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <property name="movable">
     <bool>true</bool>
