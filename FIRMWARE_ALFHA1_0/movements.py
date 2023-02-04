@@ -158,3 +158,20 @@ class MovementMechanism:
                 self.induvidual_servo_control(ALL_ARMS_TRANSFORMATION_ARRAY[2] - delta, FRONTAL_ALEG, 2)
                 time.sleep(0.1)
             delta = 0
+
+    def action_transformation_say_hi(self):
+        """Action transformation say hi"""
+        counter = 0
+        while counter <= 6:
+            counter = counter + 1
+            delta = 0
+            while delta < 60:
+                delta = delta + 1
+                self.induvidual_servo_control(ALL_ARMS_TRANSFORMATION_ARRAY[1] - delta, FRONTAL_BLEG, 2)
+                time.sleep(0.01)
+            delta = 0
+            while delta < 60:
+                delta = delta + 1
+                self.induvidual_servo_control(ALL_ARMS_TRANSFORMATION_ARRAY[0] + delta, FRONTAL_BLEG, 2)
+                time.sleep(0.01)
+        counter=0
