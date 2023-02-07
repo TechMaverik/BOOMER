@@ -44,7 +44,7 @@ border-color: rgb(0, 0, 0);
 }
 QTabBar::tab:selected{
 background-color:rgb(50, 50, 50);
-color:rgba(255, 217, 24);
+color:rgb(255, 217, 24);
 }</string>
    </property>
    <property name="tabPosition">
@@ -54,7 +54,7 @@ color:rgba(255, 217, 24);
     <enum>QTabWidget::Triangular</enum>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>1</number>
    </property>
    <property name="movable">
     <bool>true</bool>
@@ -207,42 +207,32 @@ color: rgb(255, 255, 255);</string>
        <x>0</x>
        <y>0</y>
        <width>501</width>
-       <height>101</height>
+       <height>161</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
-      <property name="spacing">
+      <property name="horizontalSpacing">
+       <number>3</number>
+      </property>
+      <property name="verticalSpacing">
        <number>0</number>
       </property>
-      <item row="0" column="0">
-       <widget class="QPushButton" name="ctrl_1">
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-background-color: rgb(143, 143, 143);
-color:rgb(56, 56, 56);
-font: 10pt &quot;Comic Sans MS&quot;;
-}
-QPushButton:hover{
-background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
-color:rgb(65, 65, 65)
-}
-QPushButton:pressed{
-background-color:rgb(57, 57, 57);
-color:rgb(255, 255, 255)
-}</string>
-        </property>
-        <property name="text">
-         <string>Say HI 🤚</string>
-        </property>
-       </widget>
-      </item>
       <item row="0" column="3">
        <widget class="QPushButton" name="pushButton_2">
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>14</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
         <property name="styleSheet">
          <string notr="true">QPushButton{
 background-color: rgb(143, 143, 143);
 color:rgb(56, 56, 56);
-font: 10pt &quot;Comic Sans MS&quot;;
+font:  &quot;Comic Sans MS&quot;;
 }
 QPushButton:hover{
 background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
@@ -258,13 +248,53 @@ color:rgb(255, 255, 255)
         </property>
        </widget>
       </item>
-      <item row="0" column="2">
-       <widget class="QPushButton" name="pushButton_5">
+      <item row="0" column="0">
+       <widget class="QPushButton" name="ctrl_1">
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>14</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
         <property name="styleSheet">
          <string notr="true">QPushButton{
 background-color: rgb(143, 143, 143);
 color:rgb(56, 56, 56);
-font: 10pt &quot;Comic Sans MS&quot;;
+font:  &quot;Comic Sans MS&quot;;
+}
+QPushButton:hover{
+background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
+color:rgb(65, 65, 65)
+}
+QPushButton:pressed{
+background-color:rgb(57, 57, 57);
+color:rgb(255, 255, 255)
+}</string>
+        </property>
+        <property name="text">
+         <string>Say HI 🤚</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="pushButton_5">
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>14</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background-color: rgb(143, 143, 143);
+color:rgb(56, 56, 56);
+font:  &quot;Comic Sans MS&quot;;
 }
 QPushButton:hover{
 background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
@@ -280,35 +310,28 @@ color:rgb(255, 255, 255)
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
-       <widget class="QPushButton" name="pushButton_7">
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-background-color: rgb(143, 143, 143);
-color:rgb(56, 56, 56);
-font: 10pt &quot;Comic Sans MS&quot;;
-}
-QPushButton:hover{
-background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
-color:rgb(65, 65, 65)
-}
-QPushButton:pressed{
-background-color:rgb(57, 57, 57);
-color:rgb(255, 255, 255)
-}</string>
-        </property>
-        <property name="text">
-         <string>Security 🛡️</string>
-        </property>
-       </widget>
-      </item>
       <item row="1" column="3">
        <widget class="QPushButton" name="pushButton_9">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>90</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>14</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
         <property name="styleSheet">
          <string notr="true">QPushButton{
 background-color: rgb(143, 143, 143);
 color:rgb(56, 56, 56);
-font: 10pt &quot;Comic Sans MS&quot;;
+font: &quot;Comic Sans MS&quot;;
 }
 QPushButton:hover{
 background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
@@ -324,13 +347,53 @@ color:rgb(255, 255, 255)
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
-       <widget class="QPushButton" name="ctrl_2">
+      <item row="1" column="0">
+       <widget class="QPushButton" name="pushButton_7">
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>14</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
         <property name="styleSheet">
          <string notr="true">QPushButton{
 background-color: rgb(143, 143, 143);
 color:rgb(56, 56, 56);
-font: 10pt &quot;Comic Sans MS&quot;;
+font:  &quot;Comic Sans MS&quot;;
+}
+QPushButton:hover{
+background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
+color:rgb(65, 65, 65)
+}
+QPushButton:pressed{
+background-color:rgb(57, 57, 57);
+color:rgb(255, 255, 255)
+}</string>
+        </property>
+        <property name="text">
+         <string>Security 🛡️</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="ctrl_2">
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>14</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background-color: rgb(143, 143, 143);
+color:rgb(56, 56, 56);
+font:  &quot;Comic Sans MS&quot;;
 }
 QPushButton:hover{
 background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
@@ -348,11 +411,20 @@ color:rgb(255, 255, 255)
       </item>
       <item row="1" column="2">
        <widget class="QPushButton" name="pushButton_8">
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>14</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
         <property name="styleSheet">
          <string notr="true">QPushButton{
 background-color: rgb(143, 143, 143);
 color:rgb(56, 56, 56);
-font: 10pt &quot;Comic Sans MS&quot;;
+font:  &quot;Comic Sans MS&quot;;
 }
 QPushButton:hover{
 background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
@@ -370,11 +442,20 @@ color:rgb(255, 255, 255)
       </item>
       <item row="1" column="1">
        <widget class="QPushButton" name="pushButton_11">
+        <property name="font">
+         <font>
+          <family>Comic Sans MS</family>
+          <pointsize>14</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
         <property name="styleSheet">
          <string notr="true">QPushButton{
 background-color: rgb(143, 143, 143);
 color:rgb(56, 56, 56);
-font: 10pt &quot;Comic Sans MS&quot;;
+font:  &quot;Comic Sans MS&quot;;
 }
 QPushButton:hover{
 background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
@@ -390,23 +471,23 @@ color:rgb(255, 255, 255)
         </property>
        </widget>
       </item>
+      <item row="2" column="3">
+       <widget class="QLineEdit" name="lineEdit_3">
+        <property name="font">
+         <font>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">padding-left:8px;
+color: rgb(255, 255, 255);</string>
+        </property>
+        <property name="placeholderText">
+         <string>PORT</string>
+        </property>
+       </widget>
+      </item>
      </layout>
-    </widget>
-    <widget class="QLineEdit" name="lineEdit_3">
-     <property name="geometry">
-      <rect>
-       <x>410</x>
-       <y>120</y>
-       <width>91</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">padding-left:8px;</string>
-     </property>
-     <property name="placeholderText">
-      <string>PORT</string>
-     </property>
     </widget>
    </widget>
    <widget class="QWidget" name="game_tab">
@@ -496,7 +577,7 @@ QPushButton:hover{
          <property name="styleSheet">
           <string notr="true">QPushButton
 {
-  image: url(:/Baics/squid.jpg);
+  image:url(:/Baics/squid.jpg);
 	background-color: rgb(0, 0, 0);
 }
 
@@ -545,7 +626,7 @@ QPushButton:hover{
   </widget>
  </widget>
  <resources>
-  <include location="../../Support Tools/UI/contents.qrc"/>
+  <include location="contents.qrc"/>
  </resources>
  <connections/>
 </ui>
