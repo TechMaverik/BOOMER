@@ -542,10 +542,16 @@ color: rgb(255, 255, 255);</string>
        <height>141</height>
       </rect>
      </property>
+     <property name="font">
+      <font>
+       <family>Comic Sans MS</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
      <property name="styleSheet">
       <string notr="true">QGroupBox {
     border: 1px solid rgb(85, 255, 127);
-    border-radius: 9px;
+    border-radius: 12px;
     margin-top: 0.5em;
 	color:rgb(255, 255, 255);
 }
@@ -594,10 +600,13 @@ QGroupBox::title {
 {
   image: url(:/Baics/dont_sleep.jpg);
 	background-color: rgb(25, 23, 34);
+	border: 1px solid rgba(85, 191, 233,0);
+border-radius:20px
 }
 
 QPushButton:hover{
 	border: 1px solid rgb(85, 191, 233);
+border-radius:8px
 }</string>
          </property>
          <property name="text">
@@ -616,12 +625,15 @@ QPushButton:hover{
          <property name="styleSheet">
           <string notr="true">QPushButton
 {
-  image:url(:/Baics/squid.jpg);
+ image:url(:/Baics/memory.png);
 	background-color: rgb(0, 0, 0);
-}
+	border: 1px solid rgba(85, 191, 233,0);
+border-radius:20px
 
+}
 QPushButton:hover{
-	border: 1px solid rgb(231, 29, 131);
+	border: 1px solid white;
+border-radius:8px
 }</string>
          </property>
          <property name="text">
@@ -642,10 +654,13 @@ QPushButton:hover{
 {
  image:url(:/Baics/memory.png);
 	background-color: rgb(0, 0, 0);
+	border: 1px solid rgba(85, 191, 233,0);
+border-radius:20px
 
 }
 QPushButton:hover{
 	border: 1px solid white;
+border-radius:8px
 }</string>
          </property>
          <property name="text">
