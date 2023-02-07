@@ -60,6 +60,7 @@ def startup():
 
 
 def blink_eye():
+    """Blink eyes"""
     while True:
         oled.fill(0)
         oled.blit(OPEN_EYES_FRAME_BUFFER, 0, 0)
@@ -69,3 +70,19 @@ def blink_eye():
         oled.blit(CLOSE_EYES_FRAME_BUFFER, 0, 0)
         oled.show()
         time.sleep(1)
+
+
+def open_eyes():
+    """Open eyes"""
+    oled.fill(0)
+    oled.blit(OPEN_EYES_FRAME_BUFFER, 0, 0)
+    oled.show()
+    time.sleep(1)
+
+
+def close_eyes():
+    """Close eyes"""
+    oled.fill(0)
+    oled.blit(CLOSE_EYES_FRAME_BUFFER, 0, 0)
+    oled.show()
+    time.sleep(1)
