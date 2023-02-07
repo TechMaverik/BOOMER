@@ -86,3 +86,11 @@ def close_eyes():
     oled.blit(CLOSE_EYES_FRAME_BUFFER, 0, 0)
     oled.show()
     time.sleep(1)
+
+
+def look_close():
+    """Look close"""
+    oled.fill(0)
+    oled.blit(IDLE_FRAME_BUFFER, 0, 0)
+    oled.show()
+    time.sleep(1)
