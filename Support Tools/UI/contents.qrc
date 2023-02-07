@@ -1,0 +1,9 @@
+<RCC>
+  <qresource prefix="Baics">
+    <file>memory.png</file>
+    <file>dont_sleep.jpg</file>
+    <file>squid.jpg</file>
+    <file>boomer.jpeg</file>
+    <file>BOOMER.jpg</file>
+  </qresource>
+</RCC>
