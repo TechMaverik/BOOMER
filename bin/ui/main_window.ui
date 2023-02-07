@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>504</width>
-    <height>148</height>
+    <height>178</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -26,18 +26,26 @@
      <x>0</x>
      <y>0</y>
      <width>511</width>
-     <height>151</height>
+     <height>181</height>
     </rect>
    </property>
    <property name="font">
     <font>
-     <pointsize>9</pointsize>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <bold>false</bold>
     </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(71, 71, 71);
+    <string notr="true">QTabBar{
+background-color: rgb(71, 71, 71);
 color: rgb(255, 255, 255);
-border-color: rgb(0, 0, 0);</string>
+border-color: rgb(0, 0, 0);
+}
+QTabBar::tab:selected{
+background-color: rgb(71, 71, 71);
+color:rgba(255, 217, 24);
+}</string>
    </property>
    <property name="tabPosition">
     <enum>QTabWidget::North</enum>
@@ -46,210 +54,11 @@ border-color: rgb(0, 0, 0);</string>
     <enum>QTabWidget::Triangular</enum>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <property name="movable">
     <bool>true</bool>
    </property>
-   <widget class="QWidget" name="controls_tab">
-    <attribute name="title">
-     <string>Controls</string>
-    </attribute>
-    <attribute name="toolTip">
-     <string>Generic Robot Controls (Move Forward, Sit, Stand etc) Window</string>
-    </attribute>
-    <widget class="QWidget" name="gridLayoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>0</x>
-       <y>0</y>
-       <width>501</width>
-       <height>141</height>
-      </rect>
-     </property>
-     <layout class="QGridLayout" name="gridLayout">
-      <property name="spacing">
-       <number>0</number>
-      </property>
-      <item row="0" column="0">
-       <widget class="QPushButton" name="ctrl_1">
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-background-color: rgb(143, 143, 143);
-color:rgb(56, 56, 56);
-font: 10pt &quot;Comic Sans MS&quot;;
-}
-QPushButton:hover{
-background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
-color:rgb(65, 65, 65)
-}
-QPushButton:pressed{
-background-color:rgb(57, 57, 57);
-color:rgb(255, 255, 255)
-}</string>
-        </property>
-        <property name="text">
-         <string>Say HI</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="3">
-       <widget class="QPushButton" name="pushButton_2">
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-background-color: rgb(143, 143, 143);
-color:rgb(56, 56, 56);
-font: 10pt &quot;Comic Sans MS&quot;;
-}
-QPushButton:hover{
-background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
-color:rgb(65, 65, 65)
-}
-QPushButton:pressed{
-background-color:rgb(57, 57, 57);
-color:rgb(255, 255, 255)
-}</string>
-        </property>
-        <property name="text">
-         <string>All arms UP</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <widget class="QPushButton" name="pushButton_5">
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-background-color: rgb(143, 143, 143);
-color:rgb(56, 56, 56);
-font: 10pt &quot;Comic Sans MS&quot;;
-}
-QPushButton:hover{
-background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
-color:rgb(65, 65, 65)
-}
-QPushButton:pressed{
-background-color:rgb(57, 57, 57);
-color:rgb(255, 255, 255)
-}</string>
-        </property>
-        <property name="text">
-         <string>Forward Stand</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="0">
-       <widget class="QPushButton" name="pushButton_7">
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-background-color: rgb(143, 143, 143);
-color:rgb(56, 56, 56);
-font: 10pt &quot;Comic Sans MS&quot;;
-}
-QPushButton:hover{
-background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
-color:rgb(65, 65, 65)
-}
-QPushButton:pressed{
-background-color:rgb(57, 57, 57);
-color:rgb(255, 255, 255)
-}</string>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="3">
-       <widget class="QPushButton" name="pushButton_9">
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-background-color: rgb(143, 143, 143);
-color:rgb(56, 56, 56);
-font: 10pt &quot;Comic Sans MS&quot;;
-}
-QPushButton:hover{
-background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
-color:rgb(65, 65, 65)
-}
-QPushButton:pressed{
-background-color:rgb(57, 57, 57);
-color:rgb(255, 255, 255)
-}</string>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QPushButton" name="ctrl_2">
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-background-color: rgb(143, 143, 143);
-color:rgb(56, 56, 56);
-font: 10pt &quot;Comic Sans MS&quot;;
-}
-QPushButton:hover{
-background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
-color:rgb(65, 65, 65)
-}
-QPushButton:pressed{
-background-color:rgb(57, 57, 57);
-color:rgb(255, 255, 255)
-}</string>
-        </property>
-        <property name="text">
-         <string>Stand Up</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="2">
-       <widget class="QPushButton" name="pushButton_8">
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-background-color: rgb(143, 143, 143);
-color:rgb(56, 56, 56);
-font: 10pt &quot;Comic Sans MS&quot;;
-}
-QPushButton:hover{
-background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
-color:rgb(65, 65, 65)
-}
-QPushButton:pressed{
-background-color:rgb(57, 57, 57);
-color:rgb(255, 255, 255)
-}</string>
-        </property>
-        <property name="text">
-         <string>PushButton</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QPushButton" name="pushButton_11">
-        <property name="styleSheet">
-         <string notr="true">QPushButton{
-background-color: rgb(143, 143, 143);
-color:rgb(56, 56, 56);
-font: 10pt &quot;Comic Sans MS&quot;;
-}
-QPushButton:hover{
-background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
-color:rgb(65, 65, 65)
-}
-QPushButton:pressed{
-background-color:rgb(57, 57, 57);
-color:rgb(255, 255, 255)
-}</string>
-        </property>
-        <property name="text">
-         <string>Sit down</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </widget>
    <widget class="QWidget" name="rm_tab">
     <attribute name="title">
      <string>Reminder</string>
@@ -263,7 +72,7 @@ color:rgb(255, 255, 255)
        <x>0</x>
        <y>0</y>
        <width>501</width>
-       <height>158</height>
+       <height>161</height>
       </rect>
      </property>
      <layout class="QVBoxLayout" name="verticalLayout">
@@ -383,6 +192,221 @@ color: rgb(255, 255, 255);</string>
        </widget>
       </item>
      </layout>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="controls_tab">
+    <attribute name="title">
+     <string>Controls</string>
+    </attribute>
+    <attribute name="toolTip">
+     <string>Generic Robot Controls (Move Forward, Sit, Stand etc) Window</string>
+    </attribute>
+    <widget class="QWidget" name="gridLayoutWidget">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>501</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="spacing">
+       <number>0</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QPushButton" name="ctrl_1">
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background-color: rgb(143, 143, 143);
+color:rgb(56, 56, 56);
+font: 10pt &quot;Comic Sans MS&quot;;
+}
+QPushButton:hover{
+background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
+color:rgb(65, 65, 65)
+}
+QPushButton:pressed{
+background-color:rgb(57, 57, 57);
+color:rgb(255, 255, 255)
+}</string>
+        </property>
+        <property name="text">
+         <string>Say HI 🤚</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="3">
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background-color: rgb(143, 143, 143);
+color:rgb(56, 56, 56);
+font: 10pt &quot;Comic Sans MS&quot;;
+}
+QPushButton:hover{
+background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
+color:rgb(65, 65, 65)
+}
+QPushButton:pressed{
+background-color:rgb(57, 57, 57);
+color:rgb(255, 255, 255)
+}</string>
+        </property>
+        <property name="text">
+         <string>All arms UP 🙌</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="pushButton_5">
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background-color: rgb(143, 143, 143);
+color:rgb(56, 56, 56);
+font: 10pt &quot;Comic Sans MS&quot;;
+}
+QPushButton:hover{
+background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
+color:rgb(65, 65, 65)
+}
+QPushButton:pressed{
+background-color:rgb(57, 57, 57);
+color:rgb(255, 255, 255)
+}</string>
+        </property>
+        <property name="text">
+         <string>Forward 🏃‍</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QPushButton" name="pushButton_7">
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background-color: rgb(143, 143, 143);
+color:rgb(56, 56, 56);
+font: 10pt &quot;Comic Sans MS&quot;;
+}
+QPushButton:hover{
+background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
+color:rgb(65, 65, 65)
+}
+QPushButton:pressed{
+background-color:rgb(57, 57, 57);
+color:rgb(255, 255, 255)
+}</string>
+        </property>
+        <property name="text">
+         <string>Security 🛡️</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="3">
+       <widget class="QPushButton" name="pushButton_9">
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background-color: rgb(143, 143, 143);
+color:rgb(56, 56, 56);
+font: 10pt &quot;Comic Sans MS&quot;;
+}
+QPushButton:hover{
+background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
+color:rgb(65, 65, 65)
+}
+QPushButton:pressed{
+background-color:rgb(57, 57, 57);
+color:rgb(255, 255, 255)
+}</string>
+        </property>
+        <property name="text">
+         <string>Wiggle 💀</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="ctrl_2">
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background-color: rgb(143, 143, 143);
+color:rgb(56, 56, 56);
+font: 10pt &quot;Comic Sans MS&quot;;
+}
+QPushButton:hover{
+background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
+color:rgb(65, 65, 65)
+}
+QPushButton:pressed{
+background-color:rgb(57, 57, 57);
+color:rgb(255, 255, 255)
+}</string>
+        </property>
+        <property name="text">
+         <string>Stand Up 🧍‍</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="pushButton_8">
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background-color: rgb(143, 143, 143);
+color:rgb(56, 56, 56);
+font: 10pt &quot;Comic Sans MS&quot;;
+}
+QPushButton:hover{
+background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
+color:rgb(65, 65, 65)
+}
+QPushButton:pressed{
+background-color:rgb(57, 57, 57);
+color:rgb(255, 255, 255)
+}</string>
+        </property>
+        <property name="text">
+         <string>Down 🙇</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="pushButton_11">
+        <property name="styleSheet">
+         <string notr="true">QPushButton{
+background-color: rgb(143, 143, 143);
+color:rgb(56, 56, 56);
+font: 10pt &quot;Comic Sans MS&quot;;
+}
+QPushButton:hover{
+background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(185, 209, 234, 255), stop:0.881356 rgba(234, 234, 234, 255));
+color:rgb(65, 65, 65)
+}
+QPushButton:pressed{
+background-color:rgb(57, 57, 57);
+color:rgb(255, 255, 255)
+}</string>
+        </property>
+        <property name="text">
+         <string>Sit down 🧎‍</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLineEdit" name="lineEdit_3">
+     <property name="geometry">
+      <rect>
+       <x>410</x>
+       <y>120</y>
+       <width>91</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">padding-left:8px;</string>
+     </property>
+     <property name="placeholderText">
+      <string>PORT</string>
+     </property>
     </widget>
    </widget>
    <widget class="QWidget" name="game_tab">
