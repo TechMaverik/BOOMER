@@ -45,3 +45,12 @@ HIND_DLEG = [13, 14, 15]
 INTERVAL = 50
 led = Pin(25, Pin.OUT)
 led.high()
+PIR_SENSOR_PIN = 22
+BUZZER_PIN = 26
+STAND_CMD = "stand"
+SIT_CMD = "sit"
+HI_CMD = "hi"
+GUARD_CMD = "guard"
+FORWARD_CMD = "forward"
+ALL_LEGS_UP_CMD = "up"
+ALL_LEGS_DOWN_CMD = "down"
