@@ -1,6 +1,7 @@
 """main.py"""
 
 from movements import MovementMechanism
+from security import Security
 import communications
 from display_engine import *
 from message_constants import *
@@ -28,3 +29,5 @@ while True:
             MovementMechanism().action_transformation_all_arms_up_down(False)
         elif data == HI_CMD:
             MovementMechanism().action_transformation_say_hi()
+        elif data == GUARD_CMD:
+            Security().activate_guard_mode()
